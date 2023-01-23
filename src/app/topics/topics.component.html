@@ -1,12 +1,12 @@
 <h2 class="heading">Hacker News</h2>
 <ol *ngIf="topics.length > 0" class="topics">
-  <li *ngFor="let topic of topics">
+  <li *ngFor="let topic of topics" class="topic">
     <a routerLink="/topic/{{ topic.id }}">
-      <p>{{ topic.title }}</p>
+      <p class="title">{{ topic.title }}</p>
     </a>
     <div class="info">
       <span>{{ topic.score }} points</span>
-      <span>by: {{ topic.by }}</span>
+      <span>by {{ topic.by }}</span>
       <span>time: {{ topic.time | dateAgo }}</span>
       <span>|</span>
       <span>{{ topic.descendants }} comments</span>

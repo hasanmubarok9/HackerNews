@@ -13,7 +13,7 @@ import { TopicService } from '../topic.service';
 })
 export class TopicDetailComponent implements OnInit {
   topic?: Topic;
-  comments?: Array<Topic & { subComment: string | null }>;
+  comments?: Array<Topic & { subComment: Topic | null }>;
 
   constructor(
     private route: ActivatedRoute,
@@ -48,11 +48,9 @@ export class TopicDetailComponent implements OnInit {
             this.comments = responseComment.map((comment) => ({
               ...comment,
               subComment:
-                comment === null
-                  ? ''
-                  : responseSubComment.find(
-                      (subComment) => subComment?.parent === comment.id
-                    )?.text || null,
+                responseSubComment.find(
+                  (subComment) => subComment?.parent === comment.id
+                ) || null,
             }));
           });
         });

@@ -7,24 +7,26 @@
     <span>time: {{ topic.time | dateAgo }}</span>
     <span>|</span>
     <span>{{ topic.descendants }} comments</span>
-  </div>
-  <div class="text">
-    <p [innerHTML]="topic.text"></p>
+    <div class="text">
+      <p [innerHTML]="topic.text"></p>
+    </div>
   </div>
   <div *ngIf="comments && comments.length > 0" class="comment">
     <p>Comment:</p>
     <ul>
-      <li *ngFor="let comment of comments">
+      <li *ngFor="let comment of comments" class="comment-item">
         <div>
-          <span>{{comment.by}} </span>
-          <span>{{comment.time | dateAgo }}</span>
+          <span class="comment-by">{{ comment.by }} </span>
+          <span>{{ comment.time | dateAgo }}</span>
         </div>
         <p [innerHTML]="comment.text"></p>
         <div *ngIf="comment.subComment !== null">
           <p>Comment:</p>
-          <ul>
-            <li [innerHTML]="comment.subComment"></li>
-          </ul>
+          <div class="sub-comment">
+            <span class="comment-by">{{ comment.subComment.by }}</span>
+            <span>{{ comment.subComment.time | dateAgo }}</span>
+            <p [innerHTML]="comment.subComment.text"></p>
+          </div>
         </div>
       </li>
     </ul>

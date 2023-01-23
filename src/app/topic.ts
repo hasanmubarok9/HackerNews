@@ -4,5 +4,8 @@ export interface Topic {
   score: number;
   time: Date;
   title: string;
+  text: string;
+  kids: number[];
   descendants: number;
+  parent: number;
 }

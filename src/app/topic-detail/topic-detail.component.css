@@ -1,0 +1,10 @@
+.info, .text, .comment {
+  padding: 1rem;
+}
+
+.info span:not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+/* .text {
+} */

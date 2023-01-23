@@ -1,7 +1,10 @@
+.heading {
+  padding: 1rem;
+}
 .topics a {
-    color: #333;
-    font-weight: 700;
-    text-decoration: none;
+  color: #333;
+  font-weight: 700;
+  text-decoration: none;
 }
 .info span:not(:last-child) {
   margin-right: 0.5rem;

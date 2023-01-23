@@ -25,8 +25,9 @@ export class TopicService {
       return of(result as T);
     };
   }
-
-  getTopic(id: number): Observable<Topic> {
+  
+  // GET DETAIL
+  getDetail(id: number): Observable<Topic> {
     return this.http
       .get<Topic>(`${this.url}/item/${id}.json?print=pretty`)
       .pipe(catchError(this.handleError<any>([])));

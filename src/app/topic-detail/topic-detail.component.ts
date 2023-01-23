@@ -17,11 +17,16 @@ export class TopicDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private topicService: TopicService
+    private topicService: TopicService,
+    private location: Location
   ) {}
 
   ngOnInit(): void {
     this.getTopic();
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
   getTopic(): void {

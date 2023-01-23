@@ -1,4 +1,5 @@
 <div *ngIf="topic">
+  <button type="button" (click)="goBack()">go back</button>
   <div class="info">
     <h2>{{ topic.title }}</h2>
     <span>{{ topic.score }} points</span>

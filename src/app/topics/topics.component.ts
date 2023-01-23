@@ -21,7 +21,7 @@ export class TopicsComponent implements OnInit {
   getTopics(): void {
     this.topicService.getTopics().subscribe((topics: number[]) => {
       forkJoin(
-        topics.slice(0, 10).map((topic) => this.topicService.getTopic(topic))
+        topics.slice(0, 20).map((topic) => this.topicService.getTopic(topic))
       ).subscribe((response) => (this.topics = response));
     });
   }

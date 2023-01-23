@@ -2,7 +2,7 @@ export interface Topic {
   id: number;
   by: string;
   score: number;
-  time: Date;
+  time: number;
   title: string;
   text: string;
   kids: number[];

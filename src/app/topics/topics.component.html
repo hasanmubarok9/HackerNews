@@ -7,7 +7,7 @@
     <div class="info">
       <span>{{ topic.score }} points</span>
       <span>by: {{ topic.by }}</span>
-      <span>time: {{ topic.time }}</span>
+      <span>time: {{ topic.time | dateAgo }}</span>
       <span>|</span>
       <span>{{ topic.descendants }} comments</span>
     </div>

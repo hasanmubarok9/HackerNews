@@ -3,7 +3,7 @@
     <h2>{{ topic.title }}</h2>
     <span>{{ topic.score }} points</span>
     <span>by: {{ topic.by }}</span>
-    <span>time: {{ topic.time | date }}</span>
+    <span>time: {{ topic.time | dateAgo }}</span>
     <span>|</span>
     <span>{{ topic.descendants }} comments</span>
   </div>
@@ -15,8 +15,8 @@
     <ul>
       <li *ngFor="let comment of comments">
         <div>
-          <span>{{comment.by}}</span>
-          <span>{{comment.time | date }}</span>
+          <span>{{comment.by}} </span>
+          <span>{{comment.time | dateAgo }}</span>
         </div>
         <p [innerHTML]="comment.text"></p>
         <div *ngIf="comment.subComment !== null">
